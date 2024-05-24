@@ -3919,7 +3919,7 @@ static int it87_check_pwm(struct device *dev)
 
 		dev_info(dev,
 			 "Detected broken BIOS defaults, disabling PWM interface\n");
-		return 0;
+		return 1; // not allow to disable pwm. Works with IT8625E and Asustor AS5404T mainboard
 	} else if (fix_pwm_polarity) {
 		dev_info(dev,
 			 "PWM configuration looks sane, won't touch\n");
